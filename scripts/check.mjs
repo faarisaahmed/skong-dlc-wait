@@ -149,7 +149,7 @@ async function fetchBuild(state, now) {
 async function ntfy(topic, { title, message, url, priority = 4, tags = [] }) {
   if (!topic) return;
   if (DRY) return console.log('[dry] ntfy:', title);
-  await fetch(`https://ntfy.sh/${topic}`, {
+  await fetch("https://ntfy.sh/", {
     method: 'POST',
     body: JSON.stringify({ topic, title, message, click: url, priority, tags }),
     headers: { 'Content-Type': 'application/json' },
