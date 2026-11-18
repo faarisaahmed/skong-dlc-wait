@@ -243,6 +243,11 @@ if (status !== prevStatus.status) {
   });
 }
 
+if (process.env.TEST_ALERT) {
+  await ntfy(topic, { title: '🧪 Test: Is Sea of Sorrow out?', message: `Test alert. The real answer right now is ${status}.`, url: config.siteUrl, priority: 4, tags: ['test_tube'] });
+  await issue({ title: `🧪 Test alert (answer is ${status})`, body: 'If you got this as an email, email alerts work. You can close this issue.', labels: [] });
+}
+
 // Write. Daily heartbeat keeps the scheduled workflow from being auto-disabled (GitHub disables after 60 idle days).
 const today = now.slice(0, 10);
 if (state.heartbeat !== today) state.heartbeat = today;

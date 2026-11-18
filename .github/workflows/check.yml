@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: '*/5 * * * *'   # GitHub runs this "about" every 5 min (can lag 5–15 min when busy)
   workflow_dispatch:
+    inputs:
+      test_alert:
+        description: 'Send a test alert (push + email) without changing the answer'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -26,6 +31,7 @@ jobs:
         run: node scripts/check.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TEST_ALERT: ${{ inputs.test_alert && '1' || '' }}
       - name: Save changes
         run: |
           if git diff --quiet -- data; then echo "nothing new"; exit 0; fi
