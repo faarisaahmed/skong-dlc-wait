@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="70%">
+      <stop offset="0" stop-color="#0d4552"/>
+      <stop offset="0.6" stop-color="#05212a"/>
+      <stop offset="1" stop-color="#01080b"/>
+    </radialGradient>
+    <radialGradient id="moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#e2b86e" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#e2b86e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <circle cx="256" cy="210" r="150" fill="url(#moon)"/>
+  <!-- needle -->
+  <path d="M256 70 L266 300 L256 330 L246 300 Z" fill="#d9f3f5"/>
+  <circle cx="256" cy="96" r="9" fill="none" stroke="#01080b" stroke-width="5"/>
+  <!-- thread swirl -->
+  <path d="M256 96 C330 120, 330 190, 256 200 C190 210, 196 260, 256 268" fill="none" stroke="#c62a3c" stroke-width="9" stroke-linecap="round"/>
+  <!-- waves -->
+  <path d="M0 340 C70 300, 130 380, 200 345 C270 310, 330 385, 400 345 C450 318, 485 335, 512 330 L512 512 L0 512 Z" fill="#1b6f7c"/>
+  <path d="M0 380 C80 350, 150 420, 240 385 C330 350, 400 420, 512 380 L512 512 L0 512 Z" fill="#0a3440"/>
+  <g fill="#8fe3ec">
+    <circle cx="120" cy="318" r="7"/><circle cx="150" cy="296" r="4"/><circle cx="380" cy="312" r="6"/><circle cx="410" cy="288" r="3.5"/><circle cx="300" cy="300" r="3"/>
+  </g>
+</svg>

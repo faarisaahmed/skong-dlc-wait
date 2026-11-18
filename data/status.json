@@ -1,0 +1,13 @@
+{
+  "status": "NO",
+  "reason": "No new official word from Team Cherry or Steam.",
+  "trigger": null,
+  "since": "2026-11-18T23:35:25.654Z",
+  "watchStart": "2026-11-18T23:35:25.654Z",
+  "sources": {
+    "blog": "ok",
+    "steam": "ok",
+    "youtube": "ok",
+    "build": "ok"
+  }
+}

@@ -1,0 +1,434 @@
+{
+  "items": [
+    {
+      "id": "blog:https://www.teamcherry.com.au/blog/silksong-patch-5",
+      "source": "blog",
+      "title": "SILKSONG PATCH 5 TRADITIONAL CHINESE, GERMAN UPDATES & MORE",
+      "url": "https://www.teamcherry.com.au/blog/silksong-patch-5",
+      "date": "2026-03-17T04:27:11.000Z",
+      "summary": "Silksong’s Patch 5 is now live for players on PC platforms and coming soon to consoles.",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "steam:1826992588600612",
+      "source": "steam",
+      "title": "Patch Version 1.0.30000 Now Live",
+      "url": "https://store.steampowered.com/news/app/1030300/view/1826992588600612",
+      "date": "2026-03-16T03:24:05.000Z",
+      "summary": "Patch Notes Added new Traditional Chinese localisation. Refined German translation to improve clarity and consistency with English version. Allowed Silk Soar through top scene exits. Fixed various instances of specific enemies being able t…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "blog:https://www.teamcherry.com.au/blog/hollowknightupgraded",
+      "source": "blog",
+      "title": "HOLLOW KNIGHT ARRIVES ON NINTENDO SWITCH 2, PS5 & XBOX SERIES X|S",
+      "url": "https://www.teamcherry.com.au/blog/hollowknightupgraded",
+      "date": "2026-02-06T00:21:55.000Z",
+      "summary": "Hollow Knight is now available on Nintendo Switch 2, Playstation 5 and Xbox Series X|S with higher frame-rates, higher resolution and additional effects! Free upgrade for all Nintendo Switch, PS4 and Xbox players. Additional updates and re…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "steam:1818752592134652",
+      "source": "steam",
+      "title": "Hollow Knight: Silksong - Sea of Sorrow is coming in 2026!",
+      "url": "https://store.steampowered.com/news/app/1030300/view/1818752592134652",
+      "date": "2025-12-16T03:37:23.000Z",
+      "summary": "Voyage across and beneath the salt-stricken seas in this thrilling expansion, free for all players.New areas, bosses, tools, and more! Hornet’s adventures continue in our nautically themed expansion, coming free for all players next year.…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "youtube:qDFEeeLy6ws",
+      "source": "youtube",
+      "title": "Hollow Knight: Silksong - Sea of Sorrow Teaser",
+      "url": "https://www.youtube.com/watch?v=qDFEeeLy6ws",
+      "date": "2025-12-16T00:47:51.000Z",
+      "summary": "Hollow Knight: Silksong - Sea of Sorrow is coming in 2026! Voyage across and beneath the salt-stricken seas in this thrilling expansion, free for all players.",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "blog:https://www.teamcherry.com.au/blog/holiday2025",
+      "source": "blog",
+      "title": "SILKSONG EXPANSION, HOLLOW KNIGHT REFRESHED, AND MORE!",
+      "url": "https://www.teamcherry.com.au/blog/holiday2025",
+      "date": "2025-12-16T00:47:19.000Z",
+      "summary": "Team Cherry’s holiday sign off: Silksong’s first expansion revealed, Hollow Knight refreshed, and more!",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "blog:https://www.teamcherry.com.au/blog/silksong-patch-4",
+      "source": "blog",
+      "title": "SILKSONG PATCH 4 INCLUDING NEW CHINESE FAN TRANSLATION",
+      "url": "https://www.teamcherry.com.au/blog/silksong-patch-4",
+      "date": "2025-11-07T05:56:42.000Z",
+      "summary": "Hollow Knight: Silksong's Patch 4 is now live for all players! Click through to find out all the details!",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "blog:https://www.teamcherry.com.au/blog/silksong-patch-3",
+      "source": "blog",
+      "title": "SILKSONG PATCH 3 DETAILS",
+      "url": "https://www.teamcherry.com.au/blog/silksong-patch-3",
+      "date": "2025-11-07T05:56:28.000Z",
+      "summary": "Details on Hollow Knight: Silksong’s third patch.",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "steam:1815580768283064",
+      "source": "steam",
+      "title": "Patch Version 1.0.29242 Now Live",
+      "url": "https://store.steampowered.com/news/app/1030300/view/1815580768283064",
+      "date": "2025-11-07T04:53:53.000Z",
+      "summary": "Patch NotesUpdated Simplified Chinese translation to use fan translation provided by Team Cart Fix.Switched to Unity's Input System to improve overall controller support. This includes rumble features now working for various controllers, a…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "steam:1813041031353886",
+      "source": "steam",
+      "title": "Patch Version 1.0.28891 Now Live",
+      "url": "https://store.steampowered.com/news/app/1030300/view/1813041031353886",
+      "date": "2025-10-14T00:14:05.000Z",
+      "summary": "Patch Notes - Added support for Dualsense Edge controllers. - Improved support for various controllers on Mac. - Game now pauses when the controller disconnects. - Fixed various smaller controller issues (more fixes to come in future). - F…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "blog:https://www.teamcherry.com.au/blog/silksong-patch-2",
+      "source": "blog",
+      "title": "SILKSONG PATCH 2 NOW LIVE",
+      "url": "https://www.teamcherry.com.au/blog/silksong-patch-2",
+      "date": "2025-09-23T07:49:20.000Z",
+      "summary": "Hollow Knight: Silksong’s second major patch is out now for all players. Read the details.",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "steam:1811138915504928",
+      "source": "steam",
+      "title": "Patch Version 1.0.28650 Now Live",
+      "url": "https://store.steampowered.com/news/app/1030300/view/1811138915504928",
+      "date": "2025-09-22T00:26:37.000Z",
+      "summary": "Patch Notes: - Added Dithering effect option in Advanced video settings. Reduces colour banding but can slightly soften the appearance of foreground assets. Defaults to 'Off'. - Updated Herald's Wish achievement description to clarify that…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "blog:https://www.teamcherry.com.au/blog/silksong-patch-1",
+      "source": "blog",
+      "title": "SILKSONG PATCH 1 NOW LIVE",
+      "url": "https://www.teamcherry.com.au/blog/silksong-patch-1",
+      "date": "2025-09-12T04:31:36.000Z",
+      "summary": "Details on Hollow Knight: Silksong’s first major patch, releasing for all players.",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "steam:1810503566437654",
+      "source": "steam",
+      "title": "Patch Version 1.0.28497 Now Live",
+      "url": "https://store.steampowered.com/news/app/1030300/view/1810503566437654",
+      "date": "2025-09-12T04:20:07.000Z",
+      "summary": "Patch Notes:- Fixed situation where players could remain cloakless after Slab escape sequence.- Fixed wish Infestation Operation often not being completable during the late game.- Fixed wish Beast in the Bells not being completable when Be…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "steam:1809869180060825",
+      "source": "steam",
+      "title": "The Hunt is on!",
+      "url": "https://store.steampowered.com/news/app/1030300/view/1809869180060825",
+      "date": "2025-09-05T08:34:56.000Z",
+      "summary": "Hollow Knight: Silksong is available now!Explore, fight and survive in a vast kingdom of savage beasts, fabled knights and deadly hunters.Game Features- Journey through a fallen insect kingdom of mossy grottos, gilded cities and misted moo…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "blog:https://www.teamcherry.com.au/blog/silksong-available-now",
+      "source": "blog",
+      "title": "THE HUNT IS ON!",
+      "url": "https://www.teamcherry.com.au/blog/silksong-available-now",
+      "date": "2025-09-04T14:01:00.000Z",
+      "summary": "Hollow Knight: Silksong is available now! Explore, fight and survive in a vast kingdom of savage beasts, fabled knights and deadly hunters.",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "steam:1808601382468744",
+      "source": "steam",
+      "title": "The Hunt Begins! - September 4",
+      "url": "https://store.steampowered.com/news/app/1030300/view/1808601382468744",
+      "date": "2025-08-22T06:29:51.000Z",
+      "summary": "Ascend to the peak of a vast, haunted kingdom in Hollow Knight: Silksong! Releasing September 4 for Windows, Mac & Linux.Game Features- Journey through a fallen insect kingdom of mossy grottos, gilded cities and misted moors.- Lethal acrob…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "blog:https://www.teamcherry.com.au/blog/11xf7azcuebhybgossfhdc0mphiqbs-en88t-53h3w",
+      "source": "blog",
+      "title": "HOLLOW KNIGHT: SILKSONG RELEASE TRAILER",
+      "url": "https://www.teamcherry.com.au/blog/11xf7azcuebhybgossfhdc0mphiqbs-en88t-53h3w",
+      "date": "2025-08-21T14:45:04.000Z",
+      "summary": "On September 4, ascend to the peak of a haunted kingdom in Hollow Knight: Silksong! YOUTUBE LINK:",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "youtube:6XGeJwsUP9c",
+      "source": "youtube",
+      "title": "Hollow Knight: Silksong - Release Trailer",
+      "url": "https://www.youtube.com/watch?v=6XGeJwsUP9c",
+      "date": "2025-08-21T14:30:06.000Z",
+      "summary": "On September 4, ascend to the peak of a haunted kingdom in Hollow Knight: Silksong! Play day one on Xbox Game Pass! The game will be available for purchase on Steam, Nintendo Switch, Nintendo Switch 2, Xbox, Sony PlayStation 4, Sony PlaySt…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "blog:https://www.teamcherry.com.au/blog/11xf7azcuebhybgossfhdc0mphiqbs-en88t",
+      "source": "blog",
+      "title": "THE COUNTDOWN IS ON!",
+      "url": "https://www.teamcherry.com.au/blog/11xf7azcuebhybgossfhdc0mphiqbs-en88t",
+      "date": "2025-08-19T14:50:38.000Z",
+      "summary": "Join us in 48 hours for a special announcement about Hollow Knight: Silksong! YOUTUBE LINK:",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "blog:https://www.teamcherry.com.au/blog/11xf7azcuebhybgossfhdc0mphiqbs",
+      "source": "blog",
+      "title": "TEAM CHERRY HOLIDAY SIGN OFF",
+      "url": "https://www.teamcherry.com.au/blog/11xf7azcuebhybgossfhdc0mphiqbs",
+      "date": "2019-12-13T08:45:00.000Z",
+      "summary": "Happy Holidays Gang! With Christmas close and Team Cherry about to take a few days off after an intensive year’s development, we’re gonna try and keep this update as snap-sharp as we can.",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "blog:https://www.teamcherry.com.au/blog/post-e3-wrap-silksong-systems-update",
+      "source": "blog",
+      "title": "POST E3 WRAP!",
+      "url": "https://www.teamcherry.com.au/blog/post-e3-wrap-silksong-systems-update",
+      "date": "2019-06-25T08:27:00.000Z",
+      "summary": "Team Cherry checking in for a long-past due Silksong development update. Let’s get into it for our post-E3 wrap edition!",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "blog:https://www.teamcherry.com.au/blog/hk-physical-late-anniversary-celebration-silksong-mini-update",
+      "source": "blog",
+      "title": "LATE ANNIVERSARY CELEBRATION!",
+      "url": "https://www.teamcherry.com.au/blog/hk-physical-late-anniversary-celebration-silksong-mini-update",
+      "date": "2019-03-19T08:51:00.000Z",
+      "summary": "Gang! We’re jumping in for a quick round-up update. Lots going on in the world of Hollow Knight, so we’re gonna start running down the list. This’ll be a speedy one, so we can dive straight back into Silksong development. Hold onto your ho…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "blog:https://www.teamcherry.com.au/blog/hollow-knight-silksong-revealed",
+      "source": "blog",
+      "title": "HOLLOW KNIGHT: SILKSONG REVEALED!",
+      "url": "https://www.teamcherry.com.au/blog/hollow-knight-silksong-revealed",
+      "date": "2019-02-14T10:13:00.000Z",
+      "summary": "No time for fluff today gang. Let’s leap straight in for the big reveal, in trailer form!",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "youtube:Gv6CRPqkpuU",
+      "source": "youtube",
+      "title": "Hollow Knight: Silksong - Details from Team Cherry",
+      "url": "https://www.youtube.com/watch?v=Gv6CRPqkpuU",
+      "date": "2019-02-14T09:30:33.000Z",
+      "summary": "A casual run-down by Ari and William on the details of Hollow Knight: Silksong Hollow Knight: Silksong is the epic sequel to Hollow Knight, the award winning action-adventure of bugs and heroes. As the lethal hunter Hornet, journey to all-…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "youtube:pFAknD_9U7c",
+      "source": "youtube",
+      "title": "Hollow Knight: Silksong Reveal Trailer",
+      "url": "https://www.youtube.com/watch?v=pFAknD_9U7c",
+      "date": "2019-02-14T09:30:27.000Z",
+      "summary": "Explore a vast, haunted kingdom in Hollow Knight: Silksong, the sequel to the award winning action-adventure! Discover enchanting secrets and face foes in lethal, acrobatic combat as you ascend to the peak of a land ruled by silk and song.…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "blog:https://www.teamcherry.com.au/blog/ready-your-needle",
+      "source": "blog",
+      "title": "READY YOUR NEEDLE!",
+      "url": "https://www.teamcherry.com.au/blog/ready-your-needle",
+      "date": "2019-02-11T10:20:00.000Z",
+      "summary": "Tune in this Valentine’s Day, Feb 14th, for a first look at Hornet’s new adventure.",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "blog:https://www.teamcherry.com.au/blog/happy-hollowmas",
+      "source": "blog",
+      "title": "HAPPY HOLLOWMAS!",
+      "url": "https://www.teamcherry.com.au/blog/happy-hollowmas",
+      "date": "2018-12-13T10:37:00.000Z",
+      "summary": "Happy Hollowmas Gang! We’re dropping in for our pre-Christmas Hollow Knight update. Lots going on (and lots still kept underwraps!) so let’s get into it.",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "blog:https://www.teamcherry.com.au/blog/a-hrefhttpteamcherrycomauvoidheart-edition-out-now-titlelink-to-hollow-knight-voidheart-edition-out-nowhollow-knight-voidheart-edition-out-nowa",
+      "source": "blog",
+      "title": "HOLLOW KNIGHT: VOIDHEART EDITION OUT NOW!",
+      "url": "https://www.teamcherry.com.au/blog/a-hrefhttpteamcherrycomauvoidheart-edition-out-now-titlelink-to-hollow-knight-voidheart-edition-out-nowhollow-knight-voidheart-edition-out-nowa",
+      "date": "2018-09-26T10:37:00.000Z",
+      "summary": "Hollow Knight: Voidheart Edition is available now on Playstation 4 and Xbox One!",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "youtube:JuP47fRBsWg",
+      "source": "youtube",
+      "title": "Hollow Knight: Voidheart Edition Trailer",
+      "url": "https://www.youtube.com/watch?v=JuP47fRBsWg",
+      "date": "2018-09-11T17:01:08.000Z",
+      "summary": "Descend into the world of Hollow Knight! The award winning action adventure of insects and heroes, coming to Playstation 4 and Xbox One on September 25th 2018! Explore twisting caverns, ancient cities and deadly wastes. Battle tainted crea…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "blog:https://www.teamcherry.com.au/blog/hollow-knight-voidheart-edition-releasing-on-playstation-4-and-xbox-one-september-25th",
+      "source": "blog",
+      "title": "HOLLOW KNIGHT: VOIDHEART EDITION ANNOUNCED!",
+      "url": "https://www.teamcherry.com.au/blog/hollow-knight-voidheart-edition-releasing-on-playstation-4-and-xbox-one-september-25th",
+      "date": "2018-09-11T10:53:00.000Z",
+      "summary": "Gang! We’re hugely excited to reveal Hollow Knight: Voidheart Edition, arriving digitally, for PlayStation 4 and Xbox One players on September 25th! You asked for it, and with the help of Sony and Microsoft (and our buds Shark Jump on port…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "blog:https://www.teamcherry.com.au/blog/hollow-knight-godmaster-is-out-now-for-all-players",
+      "source": "blog",
+      "title": "HOLLOW KNIGHT: GODMASTER IS OUT NOW FOR ALL PLAYERS!",
+      "url": "https://www.teamcherry.com.au/blog/hollow-knight-godmaster-is-out-now-for-all-players",
+      "date": "2018-08-16T02:44:00.000Z",
+      "summary": "It’s here gang! Hollow Knight’s fourth free Content Pack, Godmaster, is now available for all players. That’s PC, Mac, Linux & Nintendo Switch! Hollow Knight: Godmaster is the final chapter of the Knight’s story and the hugest content pack…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "blog:https://www.teamcherry.com.au/blog/godmaster-release-date-announced",
+      "source": "blog",
+      "title": "GODMASTER RELEASE DATE ANNOUNCED!",
+      "url": "https://www.teamcherry.com.au/blog/godmaster-release-date-announced",
+      "date": "2018-07-18T02:51:00.000Z",
+      "summary": "Alright team. Strap in. This one’s a biggy. We’ve got release dates, albums, new merchandise, new team member. Everything’s in here because we’re so busy we have to bundle all our news at once! Let’s get down to it! Hollow Knight: Godmaste…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "youtube:WXG4-UalrOE",
+      "source": "youtube",
+      "title": "Hollow Knight: Godmaster Release Date Announce",
+      "url": "https://www.youtube.com/watch?v=WXG4-UalrOE",
+      "date": "2018-07-17T01:39:39.000Z",
+      "summary": "This August 23rd, experience the final chapter of the knight's journey in Hollow Knight: Godmaster, free for all players on PC & Nintendo Switch. Godmaster is the final Free Content Pack for Hollow Knight and its largest yet, packed with n…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "youtube:Pk98MeQWUTw",
+      "source": "youtube",
+      "title": "Hollow Knight - Nintendo Switch - Trailer",
+      "url": "https://www.youtube.com/watch?v=Pk98MeQWUTw",
+      "date": "2018-06-12T16:47:53.000Z",
+      "summary": "Hollow Knight has arrived on the Nintendo Switch eShop! Venture down into a vast, ruined kingdom full of insects and heroes. Explore twisting caverns, battle tainted creatures and befriend bizarre bugs, all in a classic, hand-drawn 2D styl…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "youtube:UBxtfDAtVTY",
+      "source": "youtube",
+      "title": "Hollow Knight: Godmaster",
+      "url": "https://www.youtube.com/watch?v=UBxtfDAtVTY",
+      "date": "2018-01-31T06:40:02.000Z",
+      "summary": "Free Content Pack 03 - Coming to Hollow Knight early 2018, for all players! New Character and Quest - The Godseeker arrives (and your romance options expand). Track down this disturbing yet alluring being, break her chains and aid her in a…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "youtube:b1imD1_uu0w",
+      "source": "youtube",
+      "title": "Hollow Knight: The Grimm Troupe",
+      "url": "https://www.youtube.com/watch?v=b1imD1_uu0w",
+      "date": "2017-09-14T10:08:16.000Z",
+      "summary": "Free Content Pack 02 - Coming to Hollow Knight this Halloween 2017, for all players! New Major Quest - Grimm and his troupe descend on Hallownest! Take part in a twisted ritual that stretches the breadth of the kingdom and bestows the play…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "youtube:7Q-HWedUolo",
+      "source": "youtube",
+      "title": "Hollow Knight: Hidden Dreams",
+      "url": "https://www.youtube.com/watch?v=7Q-HWedUolo",
+      "date": "2017-06-08T00:57:09.000Z",
+      "summary": "Free Content Pack 01 coming to Hollow Knight July 2017 for all players. 2 New Bosses - Leap into battle with mighty new foes! Who are these enigmatic, impossible-to-discern figures? We’re not telling! 2 New Tracks - Epic battles need epic…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "youtube:UAO2urG23S4",
+      "source": "youtube",
+      "title": "Hollow Knight - Release Trailer",
+      "url": "https://www.youtube.com/watch?v=UAO2urG23S4",
+      "date": "2017-02-10T22:50:50.000Z",
+      "summary": "Wishlist on Steam: Pre-order on Humble: Site: Wishlist on GOG: On February 24th descend into a world of Insects and Heroes in Hollow Knight for PC & Mac! Get the Soundtrack at: Follow Team Cherry: Twitter: Website: Facebook:",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "youtube:U8lbFP8i730",
+      "source": "youtube",
+      "title": "Hollow Knight: Beneath and Beyond Trailer",
+      "url": "https://www.youtube.com/watch?v=U8lbFP8i730",
+      "date": "2016-06-19T23:02:08.000Z",
+      "summary": "Descend into Hallownest, a vast ancient kingdom fallen to ruin. Explore its darkest corners and discover sights of surreal beauty but prepare yourself for the dark secrets buried within. Hollow Knight is coming to PC, Mac, Linux and the Wi…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "youtube:0GXyV9EvB_g",
+      "source": "youtube",
+      "title": "Hollow Knight: Ferocious Foes Trailer",
+      "url": "https://www.youtube.com/watch?v=0GXyV9EvB_g",
+      "date": "2015-11-20T02:24:27.000Z",
+      "summary": "Vanquish a horde of bizarre and terrifying foes on your journey through the dark ruins of an ancient kingdom. Use skill and cunning to survive the depths and return changed to the surface. Hollow Knight is coming to PC, Mac, Linux and the…",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "youtube:BzvlMtvaJ8I",
+      "source": "youtube",
+      "title": "Hollow Knight King's Pass Gameplay",
+      "url": "https://www.youtube.com/watch?v=BzvlMtvaJ8I",
+      "date": "2015-07-24T05:09:10.000Z",
+      "summary": "Ari & William take you on a short tour of the King's Pass, Hollow Knight's opening area.",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    },
+    {
+      "id": "youtube:iS-v4NMQkBg",
+      "source": "youtube",
+      "title": "Hollow Knight: A Weird and Wonderful World Trailer",
+      "url": "https://www.youtube.com/watch?v=iS-v4NMQkBg",
+      "date": "2014-12-12T01:45:35.000Z",
+      "summary": "Immerse yourself in the weird and wonderful world of Hollow Knight! Find out more about the game here:",
+      "signal": "history",
+      "seen": "2026-11-18T23:35:25.654Z"
+    }
+  ]
+}

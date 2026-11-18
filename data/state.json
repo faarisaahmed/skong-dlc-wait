@@ -1,0 +1,11 @@
+{
+  "watchStart": "2026-11-18T23:35:25.654Z",
+  "build": {
+    "builds": {
+      "public": "22479045",
+      "public-beta": "22479045"
+    },
+    "dlc": ""
+  },
+  "heartbeat": "2026-11-18"
+}

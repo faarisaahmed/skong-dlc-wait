@@ -1,0 +1,4 @@
+{
+  "status": null,
+  "note": "Set status to \"YES\", \"MAYBE\" or \"NO\" to force the answer by hand. Put it back to null to let the watcher decide."
+}

@@ -1,0 +1,37 @@
+name: Watch the sea
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'   # GitHub runs this "about" every 5 min (can lag 5–15 min when busy)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: watch
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check Team Cherry + Steam
+        run: node scripts/check.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Save changes
+        run: |
+          if git diff --quiet -- data; then echo "nothing new"; exit 0; fi
+          git config user.name "sea-watcher"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git commit -m "watch: $(node -p "require('./data/status.json').status")"
+          git pull --rebase --autostash
+          git push

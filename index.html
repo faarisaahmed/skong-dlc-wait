@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Is Sea of Sorrow Out?</title>
+  <meta name="description" content="An unofficial tracker that watches Team Cherry's blog, Steam and YouTube for Hollow Knight: Silksong – Sea of Sorrow.">
+  <meta name="theme-color" content="#03141a">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Sea Watch">
+  <meta property="og:title" content="Is Sea of Sorrow out?">
+  <meta property="og:description" content="Watching the tides for Silksong's free expansion.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-status="LOADING">
+  <canvas id="motes" aria-hidden="true"></canvas>
+  <div class="moon" aria-hidden="true"></div>
+
+  <header class="top">
+    <a class="brand" href="#out" aria-label="Home">
+      <span class="brand-small">Hollow Knight · Silksong</span>
+      <span class="brand-big">Sea <em>of</em> Sorrow</span>
+      <span class="brand-sub">— the watch —</span>
+    </a>
+    <nav class="tabs" role="tablist" aria-label="Sections">
+      <a href="#out" role="tab" data-tab="out">Is it out?</a>
+      <a href="#updates" role="tab" data-tab="updates">Updates <span class="dot" id="updates-dot" hidden></span></a>
+      <a href="#lore" role="tab" data-tab="lore">Lore &amp; Leaks</a>
+      <a href="#silkposts" role="tab" data-tab="silkposts">Silkpost Spotter</a>
+      <a href="#alerts" role="tab" data-tab="alerts">Alerts</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ IS IT OUT ============ -->
+    <section id="tab-out" class="panel" data-panel="out">
+      <p class="question">Is <span>Sea of Sorrow</span> out?</p>
+      <h1 class="answer" id="answer" aria-live="polite">…</h1>
+      <svg class="flourish" viewBox="0 0 400 40" aria-hidden="true"><use href="#orn"/></svg>
+      <p class="reason" id="reason">Reading the tides…</p>
+
+      <a class="trigger" id="trigger" hidden target="_blank" rel="noopener">
+        <span class="trigger-src" id="trigger-src"></span>
+        <span class="trigger-title" id="trigger-title"></span>
+        <span class="trigger-date" id="trigger-date"></span>
+      </a>
+
+      <div class="stats">
+        <div><b id="stat-days">—</b><span>days since the teaser</span></div>
+        <div><b id="stat-left">—</b><span>days left in 2026</span></div>
+        <div><b id="stat-checked">—</b><span>last checked</span></div>
+      </div>
+
+      <p class="legend">
+        <span class="lg no">NO</span> nothing new ·
+        <span class="lg maybe">MAYBE</span> something new from Team Cherry or Steam ·
+        <span class="lg yes">YES</span> an official post says it's out
+      </p>
+    </section>
+
+    <!-- ============ UPDATES ============ -->
+    <section id="tab-updates" class="panel" data-panel="updates" hidden>
+      <h2 class="title">Messages from the Deep</h2>
+      <p class="lede">Everything Team Cherry posts on their blog, Steam and YouTube, plus Steam build changes. Checked about every 5 minutes.</p>
+      <div class="filters" role="group" aria-label="Filter by source">
+        <button class="chip on" data-filter="all">All</button>
+        <button class="chip" data-filter="blog">Blog</button>
+        <button class="chip" data-filter="steam">Steam news</button>
+        <button class="chip" data-filter="youtube">YouTube</button>
+        <button class="chip" data-filter="build">Steam builds</button>
+      </div>
+      <ol class="feed" id="feed"><li class="empty">Loading…</li></ol>
+      <p class="sources-health" id="health"></p>
+    </section>
+
+    <!-- ============ LORE & LEAKS ============ -->
+    <section id="tab-lore" class="panel prose" data-panel="lore" hidden>
+      <h2 class="title">Lore &amp; Leaks</h2>
+      <p class="lede">What we actually know, what's rumoured, and what the bugs on the shore are whispering. Last reviewed November 18, 2026.</p>
+
+      <h3><span class="tagc confirmed">Confirmed</span> Straight from Team Cherry</h3>
+      <ul class="timeline">
+        <li><time>Dec 16, 2025</time> <b>Sea of Sorrow announced</b> with a teaser on <a href="https://www.youtube.com/watch?v=qDFEeeLy6ws" target="_blank" rel="noopener">YouTube</a>, the <a href="https://www.teamcherry.com.au/blog/holiday2025" target="_blank" rel="noopener">blog</a> and Steam. It's a "nautically themed expansion, coming free for all players," and promises <i>"new areas, bosses, tools, and more!"</i></li>
+        <li><time>Dec 16, 2025</time> The Steam post invites you to <i>"voyage across and beneath the salt-stricken seas."</i> So it's not only on the water but under it.</li>
+        <li><time>Dec 16, 2025</time> Team Cherry: <i>"expect additional info shortly before … Sea of Sorrow releases."</i> <b>Remember this one.</b> The release date probably won't come out far ahead.</li>
+        <li><time>Mar 16, 2026</time> <a href="https://www.teamcherry.com.au/blog/silksong-patch-5" target="_blank" rel="noopener">Patch 5</a> (1.0.30000) was "intended as the last significant update before Silksong's upcoming major expansion." That's why any new Steam build now gets a MAYBE.</li>
+        <li><time>May 2026</time> Fangamer's physical edition listing: the DLC is <b>not on the cartridge or disc</b> and will be a free download.</li>
+        <li><time>Nov 2026</time> The physical edition booklet calls Sea of Sorrow the <b>"first giant expansion"</b>, lists it as <b>"Coming Soon,"</b> and says Silksong <i>"will expand with free content packs"</i>. <b>Packs is plural</b>, so more should follow after this one.</li>
+      </ul>
+      <p class="note">Not confirmed yet: an exact date, a platform list (it just says "all players"), and the names of any boss or area.</p>
+
+      <h3><span class="tagc rumor">Rumours</span> Take with a grain of sea salt</h3>
+      <ul>
+        <li><b>The monocle emoji (May 2026).</b> Team Cherry's marketing person Matthew "Leth" Griffin answered "Sea of Sorrow this month" with 🧐. Nothing came out in May. Leth is a known chaos agent.</li>
+        <li><b>"December 31, 2026" on IGDB and game databases.</b> That's almost certainly a placeholder for "sometime in 2026," not a real date.</li>
+        <li><b>The "Coming Soon" booklet.</b> Some read it as "it's close." Others read it as "they quietly stopped saying 2026." Both are guesses.</li>
+        <li><b>A slip to 2027.</b> Some guide sites predict it. No source, just vibes and the calendar.</li>
+      </ul>
+
+      <h3><span class="tagc theory">Theories</span> Things the community believes</h3>
+      <ul>
+        <li><b>Pharloom Bay is back.</b> A seaside area shown in Silksong's 2019 reveal footage never made it into the final game. Many think the expansion is where it went. The lashed, scythe-like lamps in the teaser look a lot like the old Bay footage.</li>
+        <li><b>The birthplace of Lifeblood.</b> Alchemist Zylotol calls Pharloom Bay "the birthplace of Lifeblood." That makes a sea expansion a natural place for Lifeblood lore.</li>
+        <li><b>The caged dome.</b> The ornate, wing-finned dome in the teaser could be a diving bell, a sunken shrine or a ship's heart. Nobody knows.</li>
+        <li><b>Returning cut content.</b> Characters and areas teased before 2025 but missing from launch (fans often bring up <i>Sharpe</i>) are prime candidates.</li>
+        <li><b>A Hollow Knight-style DLC run.</b> Hollow Knight got four free packs. "Free content packs" suggests Silksong will follow the same plan, with Sea of Sorrow as the big first one.</li>
+      </ul>
+
+      <h3><span class="tagc habit">Patterns</span> How Team Cherry usually drops things</h3>
+      <ul>
+        <li><b>Short notice.</b> Silksong's release trailer and date came out <b>August 21, 2025</b>, and the game launched <b>September 4</b>, only two weeks later. Expect something similar: a date and trailer (<span class="lg maybe">MAYBE</span>), then release day (<span class="lg yes">YES</span>).</li>
+        <li><b>Everywhere at once.</b> Big news usually hits the blog, Steam, YouTube and X within minutes of each other. That's why this tracker can skip X.</li>
+        <li><b>Betas sometimes come first.</b> Some Hollow Knight content updates went through a public Steam beta branch first. If a new branch appears, the tracker flags it.</li>
+        <li><b>Quiet until it isn't.</b> Months of silence are normal for Team Cherry. Silence doesn't mean a delay.</li>
+      </ul>
+
+      <p class="sources">Sources:
+        <a href="https://www.teamcherry.com.au/blog" target="_blank" rel="noopener">Team Cherry blog</a> ·
+        <a href="https://store.steampowered.com/news/app/1030300" target="_blank" rel="noopener">Steam news</a> ·
+        <a href="https://en.wikipedia.org/wiki/Hollow_Knight:_Silksong_%E2%80%93_Sea_of_Sorrow" target="_blank" rel="noopener">Wikipedia</a> ·
+        <a href="https://gamerant.com/hollow-knight-silksong-sea-of-sorrow-release-date-free-dlc/" target="_blank" rel="noopener">Game Rant</a> ·
+        <a href="https://gameinformer.com/2025/12/16/hollow-knight-silksong-sea-of-sorrow-is-a-free-nautical-expansion-launching-next-year" target="_blank" rel="noopener">Game Informer</a>
+      </p>
+    </section>
+
+    <!-- ============ SILKPOST SPOTTER ============ -->
+    <section id="tab-silkposts" class="panel prose" data-panel="silkposts" hidden>
+      <h2 class="title">Silkpost Spotter</h2>
+      <p class="lede">Over six years of waiting turned r/Silksong into a factory of fake news, cursed edits and "THE DATE IS HIDDEN IN THIS IMAGE" posts. The factory is running again for Sea of Sorrow. Here's how to avoid getting got.</p>
+
+      <div class="ladder">
+        <h3>The trust ladder</h3>
+        <ol>
+          <li><b>Believe it:</b> teamcherry.com.au, Steam news on the Silksong page, Team Cherry's YouTube and X, and Nintendo, Xbox or PlayStation's own channels.</li>
+          <li><b>Probably true:</b> major outlets that <i>link</i> to one of the above.</li>
+          <li><b>Something happened:</b> SteamDB changes, rating boards, store listings. Something moved, but that's not a release.</li>
+          <li><b>Assume silkpost:</b> Reddit, TikTok, Discord screenshots and "my cousin works at Nintendo."</li>
+        </ol>
+      </div>
+
+      <h3>Red flags 🚩</h3>
+      <div class="cards">
+        <div class="card"><b>No link</b><p>Real news links to Team Cherry or Steam. A post with only a screenshot of a tweet or Steam page proves nothing, since Inspect Element takes ten seconds.</p></div>
+        <div class="card"><b>Wrong flair</b><p>Check the post flair before the title. Meme, Silkpost and Shitpost flairs mean exactly that. Some silkposters even flair them as "News."</p></div>
+        <div class="card"><b>Read the comments first</b><p>If the top comment says "silkpost," "you got me" or "SHAW!", it's a silkpost. Real news gets hundreds of "IT'S REAL" replies with links.</p></div>
+        <div class="card"><b>CAPS + ???</b><p>"IT'S HAPPENING???" or "CONFIRMED?!" with no body text. Real announcements don't need question marks.</p></div>
+        <div class="card"><b>Old news, new post</b><p>The December 2025 teaser and the Patch 5 "last significant update" line get reposted as new all the time. Check the date.</p></div>
+        <div class="card"><b>Placeholder dates</b><p>Dec 31, Jan 1 or "Q4" on a database or retailer listing is a placeholder, not a leak.</p></div>
+        <div class="card"><b>Leth emojis</b><p>A 🧐, 👀 or 🌊 from Team Cherry's marketing person isn't a date. May 2026 already proved it.</p></div>
+        <div class="card"><b>"Nintendo Direct confirmed"</b><p>Nintendo announces Directs on its own channels, usually the day before. No Nintendo post means no Direct.</p></div>
+        <div class="card"><b>SteamDB isn't a release</b><p>A new build or branch means something moved. It could be a hotfix. This site shows it as MAYBE for that reason.</p></div>
+        <div class="card"><b>Hidden-in-the-image dates</b><p>Coordinates in the waves, Morse code in the bubbles, a date in the corner pixel. No.</p></div>
+      </div>
+
+      <div class="quicktest">
+        <h3>The 5-second test</h3>
+        <p>Open this site. If it says <span class="lg yes">YES</span>, it's real, because YES only shows up when an <b>official post title</b> says Sea of Sorrow is out. If it says <span class="lg no">NO</span> while Reddit is screaming, you're looking at a silkpost. Or the watcher hasn't checked yet, so give it 5–10 minutes.</p>
+      </div>
+    </section>
+
+    <!-- ============ ALERTS ============ -->
+    <section id="tab-alerts" class="panel prose" data-panel="alerts" hidden>
+      <h2 class="title">Ring the Bell</h2>
+      <p class="lede">Get pinged the moment something washes ashore. Pick as many as you like.</p>
+
+      <div class="alert-card best">
+        <h3>📱 Phone and 💻 laptop push <span class="pill">best</span></h3>
+        <p>The watcher sends every signal to a free push service called <b>ntfy</b>. Your phone gets it even when this site is closed.</p>
+        <ol>
+          <li>Install <b>ntfy</b>: <a href="https://apps.apple.com/app/ntfy/id1625396347" target="_blank" rel="noopener">iPhone</a> · <a href="https://play.google.com/store/apps/details?id=io.heckel.ntfy" target="_blank" rel="noopener">Android</a>.</li>
+          <li>Tap <b>+</b> and subscribe to this topic:
+            <div class="copyrow"><code id="topic">…</code><button class="btn small" id="copy-topic">Copy</button></div>
+          </li>
+          <li><b>Laptop:</b> open <a id="ntfy-web" href="https://ntfy.sh/app" target="_blank" rel="noopener">ntfy.sh/app</a>, subscribe to the same topic and allow notifications. This works while your browser is open.</li>
+        </ol>
+        <p class="note">YES alerts go out at max priority, which ignores most Do Not Disturb settings on Android. On iPhone, allow ntfy to send Time Sensitive notifications.</p>
+      </div>
+
+      <div class="alert-card">
+        <h3>✉️ Email</h3>
+        <p>Every new signal opens an issue on this site's GitHub repo and @mentions you, and GitHub emails you about it.</p>
+        <p>Check that <a href="https://github.com/settings/notifications" target="_blank" rel="noopener">GitHub → Settings → Notifications</a> has <b>Email</b> turned on for "Participating, @mentions and custom."</p>
+      </div>
+
+      <div class="alert-card">
+        <h3>🔔 This page</h3>
+        <p>While this site is open in a tab, or installed as an app, it checks every minute and pops a notification if the answer changes.</p>
+        <div class="btnrow">
+          <button class="btn" id="enable-notif">Enable notifications</button>
+          <button class="btn ghost" id="test-notif">Send a test</button>
+        </div>
+        <p class="note" id="notif-state"></p>
+      </div>
+
+      <div class="alert-card">
+        <h3>🏝️ Install as an app</h3>
+        <ul>
+          <li><b>iPhone:</b> open in Safari → Share → <b>Add to Home Screen</b>.</li>
+          <li><b>Android or Chrome:</b> menu (⋮) → <b>Install app</b> / <b>Add to Home screen</b>.</li>
+          <li><b>Mac Chrome:</b> the install icon in the address bar.</li>
+        </ul>
+        <button class="btn ghost" id="install-btn" hidden>Install now</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="waves" aria-hidden="true">
+    <svg viewBox="0 0 1440 160" preserveAspectRatio="none" class="w1"><path d="M0,80 C180,130 360,20 540,70 C720,120 900,30 1080,70 C1260,110 1350,60 1440,80 L1440,160 L0,160 Z"/></svg>
+    <svg viewBox="0 0 1440 160" preserveAspectRatio="none" class="w2"><path d="M0,100 C200,60 380,140 600,95 C820,50 1000,130 1200,95 C1320,75 1400,100 1440,105 L1440,160 L0,160 Z"/></svg>
+  </div>
+
+  <footer>
+    <p>An unofficial fan tracker. Not affiliated with Team Cherry. It watches their blog, Steam news, YouTube and Steam builds about every 5 minutes.
+      <a href="https://github.com/faarisaahmed/skong-dlc-wait" target="_blank" rel="noopener">Source</a> ·
+      <a href="https://github.com/faarisaahmed/skong-dlc-wait/edit/main/data/override.json" target="_blank" rel="noopener">Set the answer by hand</a></p>
+  </footer>
+
+  <!-- ornament -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="orn" viewBox="0 0 400 40">
+      <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <path d="M200 6 L208 20 L200 34 L192 20 Z" fill="currentColor" stroke="none"/>
+        <path d="M212 20 H330"/>
+        <path d="M188 20 H70"/>
+        <path d="M222 20 C232 6, 252 6, 256 16 C259 24, 248 27, 244 21"/>
+        <path d="M178 20 C168 6, 148 6, 144 16 C141 24, 152 27, 156 21"/>
+        <path d="M222 20 C232 34, 252 34, 256 24"/>
+        <path d="M178 20 C168 34, 148 34, 144 24"/>
+        <circle cx="338" cy="20" r="3" fill="currentColor" stroke="none"/>
+        <circle cx="62" cy="20" r="3" fill="currentColor" stroke="none"/>
+        <path d="M346 20 C356 20, 362 14, 370 14" />
+        <path d="M54 20 C44 20, 38 14, 30 14" />
+      </g>
+    </symbol>
+  </svg>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
