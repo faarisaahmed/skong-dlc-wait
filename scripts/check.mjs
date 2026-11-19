@@ -146,12 +146,12 @@ async function fetchBuild(state, now) {
 }
 
 // ---------- alerts ----------
-async function ntfy(topic, { title, message, url, priority = 4, tags = [] }) {
+async function ntfy(topic, { title, message, url, priority = 4 }) {
   if (!topic) return;
   if (DRY) return console.log('[dry] ntfy:', title);
   await fetch("https://ntfy.sh/", {
     method: 'POST',
-    body: JSON.stringify({ topic, title, message, click: url, priority, tags }),
+    body: JSON.stringify({ topic, title, message, click: url, priority }),
     headers: { 'Content-Type': 'application/json' },
   }).catch((e) => console.warn('ntfy failed', e.message));
 }
@@ -222,14 +222,14 @@ const statusOut = {
 
 // Alerts.
 const topic = config.ntfyTopic;
-const icon = { blog: '📜', steam: '🎮', youtube: '🎬', build: '🛠️' };
+const SRC = { blog: 'Blog', steam: 'Steam', youtube: 'YouTube', build: 'Steam build' };
 for (const it of newOnes.slice(0, 5)) {
   await ntfy(topic, {
-    title: `${icon[it.source] || '🌊'} ${it.signal === 'yes' ? 'SEA OF SORROW IS OUT' : 'New Team Cherry signal'}`,
-    message: it.title, url: it.url, priority: it.signal === 'yes' ? 5 : 4, tags: ['ocean'],
+    title: it.signal === 'yes' ? 'SEA OF SORROW IS OUT' : `New signal (${SRC[it.source] || it.source})`,
+    message: it.title, url: it.url, priority: it.signal === 'yes' ? 5 : 4,
   });
   await issue({
-    title: `${it.signal === 'yes' ? '🟢 YES' : '🟡 MAYBE'}: ${it.title}`,
+    title: `${it.signal === 'yes' ? 'YES' : 'MAYBE'}: ${it.title}`,
     body: `**Source:** ${it.source}\n**Posted:** ${it.date}\n\n${it.summary || ''}\n\n${it.url}\n\n— [skong-dlc-wait](${config.siteUrl || ''})`,
     labels: [it.signal],
   });
@@ -239,13 +239,12 @@ if (status !== prevStatus.status) {
     title: `Is Sea of Sorrow out? ${status}`,
     message: trigger?.title || reason,
     url: config.siteUrl, priority: status === 'YES' ? 5 : 3,
-    tags: [status === 'YES' ? 'tada' : status === 'MAYBE' ? 'eyes' : 'zzz'],
   });
 }
 
 if (process.env.TEST_ALERT) {
-  await ntfy(topic, { title: '🧪 Test: Is Sea of Sorrow out?', message: `Test alert. The real answer right now is ${status}.`, url: config.siteUrl, priority: 4, tags: ['test_tube'] });
-  await issue({ title: `🧪 Test alert (answer is ${status})`, body: 'If you got this as an email, email alerts work. You can close this issue.', labels: [] });
+  await ntfy(topic, { title: 'Test: Is Sea of Sorrow out?', message: `Test alert. The real answer right now is ${status}.`, url: config.siteUrl, priority: 4 });
+  await issue({ title: `Test alert (answer is ${status})`, body: 'If you got this as an email, email alerts work. You can close this issue.', labels: [] });
 }
 
 // Write. Daily heartbeat keeps the scheduled workflow from being auto-disabled (GitHub disables after 60 idle days).

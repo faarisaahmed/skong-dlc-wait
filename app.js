@@ -74,7 +74,7 @@ function renderStatus(s, override) {
   if (last && last !== status) notify(`Is Sea of Sorrow out? ${status}`, trigger?.title || reason, trigger?.url);
   store.set('lastStatus', status);
 
-  const health = Object.entries(s.sources || {}).map(([k, v]) => `${SRC_LABEL[k] || k}: ${v === 'ok' ? '✓' : '⚠ ' + v}`);
+  const health = Object.entries(s.sources || {}).map(([k, v]) => `${SRC_LABEL[k] || k}: ${v === 'ok' ? 'ok' : v}`);
   $('#health').textContent = health.length ? `Sources: ${health.join(' · ')}` : '';
 }
 
@@ -90,7 +90,7 @@ function stats() {
   const day = 864e5;
   $('#stat-days').textContent = Math.floor((Date.now() - TEASER) / day);
   const left = Math.ceil((END_2026 - Date.now()) / day);
-  $('#stat-left').textContent = left > 0 ? left : '0 😬';
+  $('#stat-left').textContent = Math.max(0, left);
 }
 
 // ---------- feed ----------
@@ -159,7 +159,7 @@ function notifState() {
 $('#enable-notif').addEventListener('click', async () => {
   if ('Notification' in window) await Notification.requestPermission();
   notifState();
-  notify('You\'ll hear the bell 🔔', 'This page will ping you when the answer changes.');
+  notify('You\'ll hear the bell', 'This page will ping you when the answer changes.');
 });
 $('#test-notif').addEventListener('click', () => {
   if (Notification?.permission !== 'granted') { notifState(); return; }
@@ -182,34 +182,60 @@ addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); installEvt 
 $('#install-btn').addEventListener('click', () => installEvt?.prompt());
 
 // ---------- floating motes ----------
+// Mobile-friendly: the canvas is sized to the largest viewport once, and only rebuilt when the
+// WIDTH changes (scrolling on phones changes the height as the address bar hides). Glows are
+// pre-rendered sprites instead of per-frame shadowBlur, capped pixel ratio, ~30fps, paused when hidden.
 function motes() {
-  const c = $('#motes'), ctx = c.getContext('2d');
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  let w, h, ps;
-  const resize = () => {
-    w = c.width = innerWidth * devicePixelRatio; h = c.height = innerHeight * devicePixelRatio;
-    ps = Array.from({ length: Math.min(90, Math.floor(innerWidth / 14)) }, () => spawn(true));
+  const c = $('#motes'), ctx = c.getContext('2d', { alpha: true });
+  const mobile = matchMedia('(pointer: coarse)').matches;
+  const dpr = Math.min(devicePixelRatio || 1, mobile ? 1.5 : 2);
+
+  const sprite = (rgb) => {
+    const s = document.createElement('canvas'); s.width = s.height = 32;
+    const g = s.getContext('2d'), grad = g.createRadialGradient(16, 16, 0, 16, 16, 16);
+    grad.addColorStop(0, `rgba(${rgb},1)`); grad.addColorStop(0.25, `rgba(${rgb},0.8)`); grad.addColorStop(1, `rgba(${rgb},0)`);
+    g.fillStyle = grad; g.fillRect(0, 0, 32, 32); return s;
   };
+  const TEAL = sprite('143,227,236'), GOLD = sprite('226,184,110');
+
+  let w = 0, h = 0, lastW = 0, ps = [];
   const spawn = (any) => ({
-    x: Math.random() * w, y: any ? Math.random() * h : h + 10,
-    r: (Math.random() * 1.8 + 0.4) * devicePixelRatio, v: (Math.random() * 0.35 + 0.08) * devicePixelRatio,
-    sway: Math.random() * Math.PI * 2, a: Math.random() * 0.6 + 0.2,
+    x: Math.random() * w, y: any ? Math.random() * h : h + 20,
+    r: (Math.random() * 3.5 + 2.5) * dpr, v: (Math.random() * 0.5 + 0.15) * dpr,
+    sway: Math.random() * Math.PI * 2, a: Math.random() * 0.5 + 0.25, gold: Math.random() < 0.35,
   });
-  const tick = () => {
-    ctx.clearRect(0, 0, w, h);
-    const yes = document.body.dataset.status === 'YES';
-    const maybe = document.body.dataset.status === 'MAYBE';
-    for (const p of ps) {
-      p.y -= p.v * (yes ? 3 : 1); p.sway += 0.01; p.x += Math.sin(p.sway) * 0.3;
-      if (p.y < -10) Object.assign(p, spawn(false));
-      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = maybe && p.r > 1.6 ? `rgba(226,184,110,${p.a})` : `rgba(143,227,236,${p.a})`;
-      ctx.shadowBlur = 8; ctx.shadowColor = ctx.fillStyle;
-      ctx.fill();
-    }
-    requestAnimationFrame(tick);
+  const resize = () => {
+    if (innerWidth === lastW) return; // ignore height-only changes from mobile toolbars
+    lastW = innerWidth;
+    const tall = Math.max(innerHeight, screen.height || 0);
+    w = c.width = Math.round(innerWidth * dpr); h = c.height = Math.round(tall * dpr);
+    c.style.height = tall + 'px';
+    ps = Array.from({ length: Math.min(mobile ? 40 : 80, Math.floor(innerWidth / 16)) }, () => spawn(true));
   };
-  addEventListener('resize', resize); resize(); tick();
+
+  let running = true, last = 0;
+  const tick = (t) => {
+    if (!running) return;
+    requestAnimationFrame(tick);
+    if (t - last < 33) return; // ~30fps is plenty for drifting motes
+    const dt = Math.min((t - last) / 33, 3); last = t;
+    const status = document.body.dataset.status;
+    const speed = status === 'YES' ? 3 : 1;
+    ctx.clearRect(0, 0, w, h);
+    for (const p of ps) {
+      p.y -= p.v * speed * dt; p.sway += 0.02 * dt; p.x += Math.sin(p.sway) * 0.4 * dt;
+      if (p.y < -20) Object.assign(p, spawn(false));
+      ctx.globalAlpha = p.a;
+      ctx.drawImage(status === 'MAYBE' && p.gold ? GOLD : TEAL, p.x - p.r, p.y - p.r, p.r * 2, p.r * 2);
+    }
+  };
+  addEventListener('resize', resize, { passive: true });
+  document.addEventListener('visibilitychange', () => {
+    running = !document.hidden;
+    if (running) { last = 0; requestAnimationFrame(tick); }
+  });
+  resize(); requestAnimationFrame(tick);
 }
 
 // ---------- go ----------

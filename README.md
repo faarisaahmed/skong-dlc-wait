@@ -1,4 +1,4 @@
-# Is Sea of Sorrow out? 🌊
+# Is Sea of Sorrow out?
 
 An unofficial fan tracker for *Hollow Knight: Silksong – Sea of Sorrow*. Not affiliated with Team Cherry.
 

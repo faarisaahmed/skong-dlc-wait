@@ -1,5 +1,5 @@
 // App shell cached for offline/instant load. Data is always fetched fresh by app.js.
-const CACHE = 'sea-watch-v1';
+const CACHE = 'sea-watch-v2';
 const SHELL = ['./', 'index.html', 'style.css', 'app.js', 'manifest.webmanifest', 'icons/icon.svg', 'icons/icon-192.png'];
 
 self.addEventListener('install', (e) => {
