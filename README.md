@@ -5,7 +5,7 @@ An unofficial fan tracker for *Hollow Knight: Silksong – Sea of Sorrow*. Not a
 **Site:** https://faarisaahmed.github.io/skong-dlc-wait/
 
 ## How it works
-- `.github/workflows/check.yml` runs `scripts/check.mjs` about every 5 minutes. It checks:
+- `.github/workflows/check.yml` keeps one watcher running around the clock that runs `scripts/check.mjs` every 2 minutes. GitHub's own cron is too unreliable for this (it fired only every 4–10 hours), so each watcher runs for ~5h40m and then starts the next one. The cron schedule is only a backup that restarts the chain if it breaks. It checks:
   - Team Cherry's blog RSS
   - official Steam announcements for Silksong (app 1030300)
   - Team Cherry's YouTube channel

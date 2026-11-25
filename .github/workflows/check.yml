@@ -1,8 +1,17 @@
 name: Watch the sea
 
+# GitHub's cron is "best effort": a '*/5' schedule in practice fired only every
+# 4–10 hours on this repo, which is how Cherry Time got noticed ~5h late.
+#
+# So the schedule is now only a keep-alive. Each run is a long-lived watcher that
+# checks every POLL_SECONDS for ~5h40m (jobs max out at 6h), then dispatches its
+# own successor. The concurrency group keeps exactly one watcher alive: a new run
+# waits for the current one to finish, and a newer waiting run replaces an older one.
+# Public repo → standard runner minutes are free, so running 24/7 costs nothing.
+
 on:
   schedule:
-    - cron: '*/5 * * * *'   # GitHub runs this "about" every 5 min (can lag 5–15 min when busy)
+    - cron: '*/10 * * * *'  # keep-alive: restarts the chain if it ever breaks
   workflow_dispatch:
     inputs:
       test_alert:
@@ -13,6 +22,7 @@ on:
 permissions:
   contents: write
   issues: write
+  actions: write   # lets the watcher start the next watcher
 
 concurrency:
   group: watch
@@ -21,23 +31,46 @@ concurrency:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 355
+    env:
+      POLL_SECONDS: 120
+      RUN_FOR_SECONDS: 20400   # 5h40m, leaves headroom under the 6h job limit
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Check Team Cherry + Steam
-        run: node scripts/check.mjs
+      - name: Watch Team Cherry + Steam
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TEST_ALERT: ${{ inputs.test_alert && '1' || '' }}
-      - name: Save changes
+          TEST_ALERT_ONCE: ${{ inputs.test_alert && '1' || '' }}
         run: |
-          if git diff --quiet -- data; then echo "nothing new"; exit 0; fi
           git config user.name "sea-watcher"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data
-          git commit -m "watch: $(node -p "require('./data/status.json').status")"
-          git pull --rebase --autostash
-          git push
+          end=$(( $(date +%s) + RUN_FOR_SECONDS ))
+          first=1
+          while :; do
+            # Pick up hand edits (override.json, code changes) before every check.
+            git pull --rebase --autostash -q || git rebase --abort 2>/dev/null || true
+
+            TEST_ALERT=$([ -n "$first" ] && echo "$TEST_ALERT_ONCE") node scripts/check.mjs \
+              || echo "::warning::check failed, will retry"
+            first=
+
+            if ! git diff --quiet -- data; then
+              git add data
+              git commit -q -m "watch: $(node -p "require('./data/status.json').status")"
+              for i in 1 2 3; do
+                git push -q && break
+                git pull --rebase -q || true
+              done
+            fi
+
+            [ $(( $(date +%s) + POLL_SECONDS )) -lt "$end" ] || break
+            sleep "$POLL_SECONDS"
+          done
+      - name: Hand over to the next watcher
+        if: ${{ !cancelled() && github.ref == 'refs/heads/main' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run check.yml --ref main -R "$GITHUB_REPOSITORY"
