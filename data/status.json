@@ -1,8 +1,17 @@
 {
-  "status": "NO",
-  "reason": "No new official word from Team Cherry or Steam.",
-  "trigger": null,
-  "since": "2026-11-18T23:35:25.654Z",
+  "status": "MAYBE",
+  "reason": "Something new appeared from an official source.",
+  "trigger": {
+    "id": "blog:https://www.teamcherry.com.au/blog/cherrytimeannounce",
+    "source": "blog",
+    "title": "Join us in 48 hours for Cherry Time!",
+    "url": "https://www.teamcherry.com.au/blog/cherrytimeannounce",
+    "date": "2026-11-25T15:16:32.000Z",
+    "summary": "Heya gang! Join us in 48 hours for Cherry Time! Get ready for a bunch of exciting announcements, plus an update on Hollow Knight: Silksong - Sea of Sorrow! Premiering here: 7AM PT | 10AM ET | 4PM CEST | 12AM JST",
+    "signal": "maybe",
+    "seen": "2026-11-25T20:02:21.016Z"
+  },
+  "since": "2026-11-25T20:02:21.016Z",
   "watchStart": "2026-11-18T23:35:25.654Z",
   "sources": {
     "blog": "ok",

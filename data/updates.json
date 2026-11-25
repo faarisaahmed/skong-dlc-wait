@@ -1,6 +1,26 @@
 {
   "items": [
     {
+      "id": "blog:https://www.teamcherry.com.au/blog/cherrytimeannounce",
+      "source": "blog",
+      "title": "Join us in 48 hours for Cherry Time!",
+      "url": "https://www.teamcherry.com.au/blog/cherrytimeannounce",
+      "date": "2026-11-25T15:16:32.000Z",
+      "summary": "Heya gang! Join us in 48 hours for Cherry Time! Get ready for a bunch of exciting announcements, plus an update on Hollow Knight: Silksong - Sea of Sorrow! Premiering here: 7AM PT | 10AM ET | 4PM CEST | 12AM JST",
+      "signal": "maybe",
+      "seen": "2026-11-25T20:02:21.016Z"
+    },
+    {
+      "id": "youtube:M-QUgdcBpZU",
+      "source": "youtube",
+      "title": "Cherry Time! Special Presentation - November 2026",
+      "url": "https://www.youtube.com/watch?v=M-QUgdcBpZU",
+      "date": "2026-11-25T14:07:53.000Z",
+      "summary": "Join us for Cherry Time! A special presentation with a bunch of exciting announcements, and an update on Hollow Knight: Silksong - Sea of Sorrow!",
+      "signal": "maybe",
+      "seen": "2026-11-25T20:02:21.016Z"
+    },
+    {
       "id": "blog:https://www.teamcherry.com.au/blog/silksong-patch-5",
       "source": "blog",
       "title": "SILKSONG PATCH 5 TRADITIONAL CHINESE, GERMAN UPDATES & MORE",
