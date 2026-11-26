@@ -17,6 +17,6 @@
     "blog": "ok",
     "steam": "ok",
     "youtube": "ok",
-    "build": "error: The operation was aborted due to timeout"
+    "build": "ok"
   }
 }
