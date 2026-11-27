@@ -16,7 +16,7 @@
   "sources": {
     "blog": "ok",
     "steam": "ok",
-    "youtube": "ok",
+    "youtube": "error: 503 Service Unavailable",
     "build": "ok"
   }
 }
