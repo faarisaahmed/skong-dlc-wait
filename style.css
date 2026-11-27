@@ -250,3 +250,57 @@ footer a { color: var(--foam); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ---------- SOON / TODAY: it has a date! ---------- */
+.celebrate {
+  display: grid; gap: 4px; justify-items: center; margin: 0 auto 28px; max-width: 620px;
+  padding: 18px 20px 16px; border-radius: 10px; position: relative; overflow: hidden;
+  border: 1px solid rgba(226, 184, 110, 0.55);
+  background: linear-gradient(135deg, rgba(226, 184, 110, 0.16), rgba(95, 212, 226, 0.12) 55%, rgba(198, 42, 60, 0.12));
+  box-shadow: 0 0 40px rgba(226, 184, 110, 0.18), inset 0 0 30px rgba(226, 184, 110, 0.08);
+}
+.celebrate::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(105deg, transparent 40%, rgba(255, 240, 200, 0.18) 50%, transparent 60%);
+  transform: translateX(-100%); animation: shimmer 4s ease-in-out infinite;
+}
+@keyframes shimmer { 60%, 100% { transform: translateX(100%); } }
+.celebrate-kicker { font-family: var(--trajan); font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--muted); }
+.celebrate-big {
+  font-family: var(--trajan); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+  font-size: clamp(1.6rem, 7vw, 2.6rem); line-height: 1.1; color: #f4d58d;
+  text-shadow: 0 0 24px rgba(226, 184, 110, 0.6);
+}
+.celebrate-date { font-family: var(--trajan); letter-spacing: 0.16em; text-transform: uppercase; color: var(--pale); font-size: clamp(0.85rem, 3.2vw, 1.05rem); }
+.celebrate-links { margin-top: 6px; font-size: 1rem; }
+.celebrate-links a { color: var(--foam); }
+
+body[data-status="SOON"] .moon, body[data-status="TODAY"] .moon { opacity: 1; background: radial-gradient(circle, rgba(244, 213, 141, 0.22) 0%, rgba(95, 212, 226, 0.08) 45%, transparent 70%); }
+body[data-status="SOON"] .answer, body[data-status="TODAY"] .answer {
+  color: #f4d58d; font-size: clamp(4.6rem, 22vw, 12rem);
+  text-shadow: 0 0 30px rgba(226, 184, 110, 0.7), 0 0 90px rgba(95, 212, 226, 0.45);
+  animation: surge-gold 1.8s ease-in-out infinite alternate;
+}
+@keyframes surge-gold { to { text-shadow: 0 0 40px rgba(244, 213, 141, 0.95), 0 0 120px rgba(95, 212, 226, 0.7); transform: scale(1.03); } }
+body[data-status="SOON"] .flourish, body[data-status="TODAY"] .flourish { color: #f4d58d; opacity: 1; }
+body[data-status="SOON"] .trigger, body[data-status="TODAY"] .trigger { border-left-color: #f4d58d; }
+body[data-status="SOON"] .waves .w1, body[data-status="TODAY"] .waves .w1 { fill: rgba(226, 184, 110, 0.22); }
+
+.countdown { display: flex; justify-content: center; gap: clamp(8px, 3vw, 22px); margin: 26px auto 0; }
+.countdown div {
+  display: flex; flex-direction: column; align-items: center; min-width: clamp(64px, 19vw, 104px);
+  padding: 12px 6px 8px; border: 1px solid rgba(226, 184, 110, 0.4); border-radius: 8px;
+  background: var(--card); backdrop-filter: blur(4px);
+}
+.countdown b { font-family: var(--trajan); font-weight: 600; font-size: clamp(1.7rem, 7.5vw, 3rem); line-height: 1; color: #f4d58d; font-variant-numeric: tabular-nums; }
+.countdown span { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 4px; }
+.countdown-note { font-size: 0.92rem; color: var(--muted); font-style: italic; max-width: 520px; margin: 12px auto 0; }
+.party { margin-top: 16px; }
+
+.lg.soon { color: #f4d58d; border-color: rgba(244, 213, 141, 0.6); background: rgba(226, 184, 110, 0.15); }
+.timeline li.big::before { background: #f4d58d; box-shadow: 0 0 12px #f4d58d; width: 13px; height: 13px; left: -7px; }
+.verdict { font-family: var(--trajan); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 1px 6px; border-radius: 3px; margin-right: 4px; white-space: nowrap; }
+.verdict.bust { color: #ff9aa6; background: rgba(198, 42, 60, 0.22); }
+.verdict.win { color: #f4d58d; background: rgba(226, 184, 110, 0.18); }
+
+.confetti { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 50; }

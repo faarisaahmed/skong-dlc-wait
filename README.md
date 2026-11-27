@@ -12,6 +12,7 @@ An unofficial fan tracker for *Hollow Knight: Silksong – Sea of Sorrow*. Not a
   - Steam build, branch and DLC changes (via api.steamcmd.net)
 - **NO**: nothing new since the watch began.
 - **MAYBE**: something new from any of those sources in the last 14 days.
+- **SOON**: Sea of Sorrow has an official date (**December 11, 2026**, announced Nov 27). The site shows a countdown until then, and **TODAY** on the day, unless the watcher says YES first.
 - **YES**: an official post *title* mentions Sea of Sorrow **and** says it's out ("out now", "now live", "available now", …).
 - Every new signal sends a push to the ntfy topic in `data/config.json` and opens a GitHub issue that @mentions the owner (which sends an email).
 

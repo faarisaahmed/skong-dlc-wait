@@ -1,7 +1,9 @@
 const REPO = 'faarisaahmed/skong-dlc-wait';
 const RAW = `https://raw.githubusercontent.com/${REPO}/main/data/`;
 const TEASER = new Date('2025-12-16T00:00:00Z');
-const END_2026 = new Date('2027-01-01T00:00:00');
+// Announced Nov 27, 2026 ("It's Cherry Time!"). No launch time given, so count to local midnight.
+const RELEASE = new Date('2026-12-11T00:00:00');
+const RELEASE_DAY_END = new Date('2026-12-12T00:00:00');
 const POLL_MS = 60_000;
 const SRC_LABEL = { blog: 'Team Cherry blog', steam: 'Steam news', youtube: 'YouTube', build: 'Steam build' };
 
@@ -50,6 +52,12 @@ async function refresh() {
 function renderStatus(s, override) {
   let status = s.status, reason = s.reason, trigger = s.trigger;
   if (override?.status) { status = override.status; reason = override.note || 'Set by hand.'; trigger = null; }
+  // It has an official date. Until the watcher sees an "out now" post, show SOON (or TODAY on the day).
+  else if (status !== 'YES' && Date.now() < RELEASE_DAY_END) {
+    status = Date.now() < RELEASE ? 'SOON' : 'TODAY';
+    reason = null;
+    trigger = { source: 'youtube', title: 'Hollow Knight: Silksong - Sea of Sorrow - Launch Trailer', url: 'https://www.youtube.com/watch?v=7hj4g173FhM', date: '2026-11-27T15:13:54.000Z' };
+  }
 
   document.body.dataset.status = status;
   $('#answer').textContent = status;
@@ -57,7 +65,13 @@ function renderStatus(s, override) {
     NO: 'Not yet. The sea is calm.',
     MAYBE: 'Something stirs beneath the waves…',
     YES: 'The tide is in. Go play.',
+    SOON: 'December 11, 2026. It\'s official. LET\'S GO!',
+    TODAY: 'It\'s December 11. Any minute now… keep this tab open.',
   }[status] + (reason && status !== 'NO' ? ` ${reason}` : '');
+  const dated = status === 'SOON' || status === 'TODAY';
+  $('#celebrate').hidden = !dated;
+  $('#countdown').hidden = $('#countdown-note').hidden = $('#party').hidden = status !== 'SOON';
+  if (dated && !store.get('partied')) { store.set('partied', '1'); confetti(); }
   document.title = status === 'NO' ? 'Is Sea of Sorrow Out?' : `${status} · Is Sea of Sorrow Out?`;
 
   const t = $('#trigger');
@@ -89,9 +103,58 @@ async function lastChecked() {
 function stats() {
   const day = 864e5;
   $('#stat-days').textContent = Math.floor((Date.now() - TEASER) / day);
-  const left = Math.ceil((END_2026 - Date.now()) / day);
-  $('#stat-left').textContent = Math.max(0, left);
 }
+
+// ---------- countdown ----------
+function countdown() {
+  const ms = Math.max(0, RELEASE - Date.now());
+  const pad = (n) => String(n).padStart(2, '0');
+  $('#cd-d').textContent = Math.floor(ms / 864e5);
+  $('#cd-h').textContent = pad(Math.floor(ms / 36e5) % 24);
+  $('#cd-m').textContent = pad(Math.floor(ms / 6e4) % 60);
+  $('#cd-s').textContent = pad(Math.floor(ms / 1e3) % 60);
+  // Roll over to TODAY at midnight without waiting for the next poll.
+  if (ms === 0 && document.body.dataset.status === 'SOON') refresh();
+}
+
+// ---------- confetti ----------
+// One burst of sea-glass confetti, shells and bubbles. Skipped for reduced motion.
+function confetti() {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const c = document.createElement('canvas');
+  c.className = 'confetti'; c.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(c);
+  const ctx = c.getContext('2d'), dpr = Math.min(devicePixelRatio || 1, 2);
+  const W = (c.width = innerWidth * dpr), H = (c.height = innerHeight * dpr);
+  const colors = ['#e2b86e', '#8fe3ec', '#5fd4e2', '#c62a3c', '#d9f3f5', '#f4d58d'];
+  const n = matchMedia('(pointer: coarse)').matches ? 110 : 200;
+  const ps = Array.from({ length: n }, (_, i) => {
+    const left = i % 2 === 0, ang = 0.25 + Math.random() * 0.6; // radians away from straight up
+    const sp = (10 + Math.random() * 12) * dpr;
+    return {
+      x: left ? 0 : W, y: H * 0.9, vx: (left ? 1 : -1) * Math.sin(ang) * sp, vy: -Math.cos(ang) * sp,
+      w: (6 + Math.random() * 8) * dpr, h: (4 + Math.random() * 6) * dpr, rot: Math.random() * 6, vr: (Math.random() - 0.5) * 0.3,
+      color: colors[(Math.random() * colors.length) | 0], shape: Math.random() < 0.18 ? 'bubble' : Math.random() < 0.3 ? 'circle' : 'rect',
+    };
+  });
+  const start = performance.now();
+  const frame = (t) => {
+    const el = t - start;
+    ctx.clearRect(0, 0, W, H);
+    ctx.globalAlpha = el > 3500 ? Math.max(0, 1 - (el - 3500) / 1500) : 1;
+    for (const p of ps) {
+      p.vy += 0.28 * dpr; p.vx *= 0.985; p.vy *= 0.985; p.x += p.vx; p.y += p.vy; p.rot += p.vr;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+      if (p.shape === 'bubble') { ctx.strokeStyle = 'rgba(143,227,236,0.9)'; ctx.lineWidth = 1.5 * dpr; ctx.beginPath(); ctx.arc(0, 0, p.w * 0.6, 0, 7); ctx.stroke(); }
+      else if (p.shape === 'circle') { ctx.fillStyle = p.color; ctx.beginPath(); ctx.arc(0, 0, p.h / 2, 0, 7); ctx.fill(); }
+      else { ctx.fillStyle = p.color; ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h * Math.abs(Math.cos(p.rot * 2))); }
+      ctx.restore();
+    }
+    if (el < 5000) requestAnimationFrame(frame); else c.remove();
+  };
+  requestAnimationFrame(frame);
+}
+$('#party').addEventListener('click', confetti);
 
 // ---------- feed ----------
 function renderFeed() {
@@ -221,13 +284,13 @@ function motes() {
     if (t - last < 33) return; // ~30fps is plenty for drifting motes
     const dt = Math.min((t - last) / 33, 3); last = t;
     const status = document.body.dataset.status;
-    const speed = status === 'YES' ? 3 : 1;
+    const speed = status === 'YES' ? 3 : status === 'SOON' || status === 'TODAY' ? 1.8 : 1;
     ctx.clearRect(0, 0, w, h);
     for (const p of ps) {
       p.y -= p.v * speed * dt; p.sway += 0.02 * dt; p.x += Math.sin(p.sway) * 0.4 * dt;
       if (p.y < -20) Object.assign(p, spawn(false));
       ctx.globalAlpha = p.a;
-      ctx.drawImage(status === 'MAYBE' && p.gold ? GOLD : TEAL, p.x - p.r, p.y - p.r, p.r * 2, p.r * 2);
+      ctx.drawImage((status === 'MAYBE' || status === 'SOON' || status === 'TODAY') && p.gold ? GOLD : TEAL, p.x - p.r, p.y - p.r, p.r * 2, p.r * 2);
     }
   };
   addEventListener('resize', resize, { passive: true });
@@ -239,7 +302,8 @@ function motes() {
 }
 
 // ---------- go ----------
-route(); stats(); motes(); notifState();
+route(); stats(); countdown(); motes(); notifState();
+setInterval(countdown, 1000);
 refresh(); lastChecked();
 setInterval(refresh, POLL_MS);
 setInterval(lastChecked, 2 * POLL_MS);

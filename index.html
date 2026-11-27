@@ -13,7 +13,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Sea Watch">
   <meta property="og:title" content="Is Sea of Sorrow out?">
-  <meta property="og:description" content="Watching the tides for Silksong's free expansion.">
+  <meta property="og:description" content="IT'S DATED. Silksong's free expansion Sea of Sorrow sails in on December 11, 2026.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -41,10 +41,29 @@
   <main>
     <!-- ============ IS IT OUT ============ -->
     <section id="tab-out" class="panel" data-panel="out">
+      <div class="celebrate" id="celebrate" hidden>
+        <span class="celebrate-kicker">The tide has turned</span>
+        <span class="celebrate-big">It has a date!</span>
+        <span class="celebrate-date">Thursday · December 11 · 2026</span>
+        <span class="celebrate-links">
+          <a href="https://www.youtube.com/watch?v=7hj4g173FhM" target="_blank" rel="noopener">Watch the launch trailer</a> ·
+          <a href="https://www.teamcherry.com.au/blog/its-cherry-time" target="_blank" rel="noopener">Read "It's Cherry Time!"</a>
+        </span>
+      </div>
+
       <p class="question">Is <span>Sea of Sorrow</span> out?</p>
       <h1 class="answer" id="answer" aria-live="polite">…</h1>
       <svg class="flourish" viewBox="0 0 400 40" aria-hidden="true"><use href="#orn"/></svg>
       <p class="reason" id="reason">Reading the tides…</p>
+
+      <div class="countdown" id="countdown" hidden aria-label="Countdown to December 11, 2026">
+        <div><b id="cd-d">—</b><span>days</span></div>
+        <div><b id="cd-h">—</b><span>hours</span></div>
+        <div><b id="cd-m">—</b><span>minutes</span></div>
+        <div><b id="cd-s">—</b><span>seconds</span></div>
+      </div>
+      <p class="countdown-note" id="countdown-note" hidden>Team Cherry hasn't said what time it launches, so this counts down to midnight on December 11 where you are. The watcher will flip to <span class="lg yes">YES</span> the moment an official post says it's out.</p>
+      <button class="btn ghost party" id="party" hidden>Celebrate again 🎉</button>
 
       <a class="trigger" id="trigger" hidden target="_blank" rel="noopener">
         <span class="trigger-src" id="trigger-src"></span>
@@ -54,12 +73,13 @@
 
       <div class="stats">
         <div><b id="stat-days">—</b><span>days since the teaser</span></div>
-        <div><b id="stat-left">—</b><span>days left in 2026</span></div>
+        <div><b id="stat-left">360</b><span>days from teaser to launch</span></div>
         <div><b id="stat-checked">—</b><span>last checked</span></div>
       </div>
 
       <p class="legend">
         <span class="lg no">NO</span> nothing new ·
+        <span class="lg soon">SOON</span> it has an official date ·
         <span class="lg maybe">MAYBE</span> something new from Team Cherry or Steam ·
         <span class="lg yes">YES</span> an official post says it's out
       </p>
@@ -83,7 +103,7 @@
     <!-- ============ LORE & LEAKS ============ -->
     <section id="tab-lore" class="panel prose" data-panel="lore" hidden>
       <h2 class="title">Lore &amp; Leaks</h2>
-      <p class="lede">What we actually know, what's rumoured, and what the bugs on the shore are whispering. Last reviewed November 18, 2026.</p>
+      <p class="lede">What we actually know, what's rumoured, and what the bugs on the shore are whispering. Last reviewed November 27, 2026, the day it got a date.</p>
 
       <h3><span class="tagc confirmed">Confirmed</span> Straight from Team Cherry</h3>
       <ul class="timeline">
@@ -93,15 +113,17 @@
         <li><time>Mar 16, 2026</time> <a href="https://www.teamcherry.com.au/blog/silksong-patch-5" target="_blank" rel="noopener">Patch 5</a> (1.0.30000) was "intended as the last significant update before Silksong's upcoming major expansion." That's why any new Steam build now gets a MAYBE.</li>
         <li><time>May 2026</time> Fangamer's physical edition listing: the DLC is <b>not on the cartridge or disc</b> and will be a free download.</li>
         <li><time>Nov 2026</time> The physical edition booklet calls Sea of Sorrow the <b>"first giant expansion"</b>, lists it as <b>"Coming Soon,"</b> and says Silksong <i>"will expand with free content packs"</i>. <b>Packs is plural</b>, so more should follow after this one.</li>
+        <li class="big"><time>Nov 27, 2026</time> <b>🎉 THE DATE: December 11, 2026.</b> Team Cherry's <a href="https://www.teamcherry.com.au/blog/its-cherry-time" target="_blank" rel="noopener">"It's Cherry Time!"</a> presentation dropped the <a href="https://www.youtube.com/watch?v=7hj4g173FhM" target="_blank" rel="noopener">Sea of Sorrow launch trailer</a>: <i>"Voyage above and beneath a vast forgotten sea in Hollow Knight: Silksong's first giant expansion, releasing free for all players on December 11, 2026!"</i></li>
+        <li><time>Nov 27, 2026</time> The same show revealed three games from Team Cherry's friends: <a href="https://www.youtube.com/watch?v=Fm7T-5VE8jg" target="_blank" rel="noopener">The Botanist and the Translator</a>, <a href="https://www.youtube.com/watch?v=X_5kv6wkU7Q" target="_blank" rel="noopener">Radio Rain</a> and <a href="https://www.youtube.com/watch?v=p7JgTRSHzjQ" target="_blank" rel="noopener">Blokkan: Secret of the Walking City</a>.</li>
       </ul>
-      <p class="note">Not confirmed yet: an exact date, a platform list (it just says "all players"), and the names of any boss or area.</p>
+      <p class="note">Not confirmed yet: the exact launch time, a platform list (it still just says "all players"), and the names of any boss or area. Trailer frame-by-frames will sort that out soon.</p>
 
       <h3><span class="tagc rumor">Rumours</span> Take with a grain of sea salt</h3>
       <ul>
-        <li><b>The monocle emoji (May 2026).</b> Team Cherry's marketing person Matthew "Leth" Griffin answered "Sea of Sorrow this month" with a monocle emoji. Nothing came out in May. Leth is a known chaos agent.</li>
-        <li><b>"December 31, 2026" on IGDB and game databases.</b> That's almost certainly a placeholder for "sometime in 2026," not a real date.</li>
-        <li><b>The "Coming Soon" booklet.</b> Some read it as "it's close." Others read it as "they quietly stopped saying 2026." Both are guesses.</li>
-        <li><b>A slip to 2027.</b> Some guide sites predict it. No source, just vibes and the calendar.</li>
+        <li><b>The monocle emoji (May 2026).</b> <span class="verdict bust">Busted</span> Team Cherry's marketing person Matthew "Leth" Griffin answered "Sea of Sorrow this month" with a monocle emoji. Nothing came out in May. Leth is a known chaos agent.</li>
+        <li><b>"December 31, 2026" on IGDB and game databases.</b> <span class="verdict bust">Placeholder</span> As called: it was a stand-in for "sometime in 2026." The real date is twenty days earlier.</li>
+        <li><b>The "Coming Soon" booklet.</b> <span class="verdict win">Called it</span> The "it's close" crowd wins. Soon meant soon.</li>
+        <li><b>A slip to 2027.</b> <span class="verdict bust">Busted</span> It's still a 2026 release, with three weeks to spare.</li>
       </ul>
 
       <h3><span class="tagc theory">Theories</span> Things the community believes</h3>
@@ -115,7 +137,7 @@
 
       <h3><span class="tagc habit">Patterns</span> How Team Cherry usually drops things</h3>
       <ul>
-        <li><b>Short notice.</b> Silksong's release trailer and date came out <b>August 21, 2025</b>, and the game launched <b>September 4</b>, only two weeks later. Expect something similar: a date and trailer (<span class="lg maybe">MAYBE</span>), then release day (<span class="lg yes">YES</span>).</li>
+        <li><b>Short notice.</b> Silksong's release trailer and date came out <b>August 21, 2025</b>, and the game launched <b>September 4</b>, only two weeks later. And they did it again: Sea of Sorrow was dated <b>November 27</b> for <b>December 11</b>, exactly two weeks out, same as Silksong.</li>
         <li><b>Everywhere at once.</b> Big news usually hits the blog, Steam, YouTube and X within minutes of each other. That's why this tracker can skip X.</li>
         <li><b>Betas sometimes come first.</b> Some Hollow Knight content updates went through a public Steam beta branch first. If a new branch appears, the tracker flags it.</li>
         <li><b>Quiet until it isn't.</b> Months of silence are normal for Team Cherry. Silence doesn't mean a delay.</li>
@@ -156,6 +178,7 @@
         <div class="card"><b>Leth emojis</b><p>A monocle, eyes or wave emoji from Team Cherry's marketing person isn't a date. May 2026 already proved it.</p></div>
         <div class="card"><b>"Nintendo Direct confirmed"</b><p>Nintendo announces Directs on its own channels, usually the day before. No Nintendo post means no Direct.</p></div>
         <div class="card"><b>SteamDB isn't a release</b><p>A new build or branch means something moved. It could be a hotfix. This site shows it as MAYBE for that reason.</p></div>
+        <div class="card"><b>"It's out early!"</b><p>The date is real now: December 11. Anything saying it's out sooner, or that it got delayed, needs a Team Cherry link or it's a silkpost.</p></div>
         <div class="card"><b>Hidden-in-the-image dates</b><p>Coordinates in the waves, Morse code in the bubbles, a date in the corner pixel. No.</p></div>
       </div>
 
