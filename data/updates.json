@@ -1,6 +1,16 @@
 {
   "items": [
     {
+      "id": "blog:https://www.teamcherry.com.au/blog/its-cherry-time",
+      "source": "blog",
+      "title": "It’s Cherry Time!",
+      "url": "https://www.teamcherry.com.au/blog/its-cherry-time",
+      "date": "2026-11-27T15:26:49.000Z",
+      "summary": "Heya Gang. It’s Cherry Time! We’ve just announced three exciting new games being developed by a few of our close friends, and an imminent release date for Hollow Knight: Silksong’s first big content update - Sea of Sorrow! Arriving free fo…",
+      "signal": "maybe",
+      "seen": "2026-11-27T15:28:08.204Z"
+    },
+    {
       "id": "youtube:7hj4g173FhM",
       "source": "youtube",
       "title": "Hollow Knight: Silksong - Sea of Sorrow - Launch Trailer",
