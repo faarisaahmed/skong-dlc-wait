@@ -1,6 +1,76 @@
 {
   "items": [
     {
+      "id": "youtube:7hj4g173FhM",
+      "source": "youtube",
+      "title": "Hollow Knight: Silksong - Sea of Sorrow - Launch Trailer",
+      "url": "https://www.youtube.com/watch?v=7hj4g173FhM",
+      "date": "2026-11-27T15:13:54.000Z",
+      "summary": "Voyage above and beneath a vast forgotten sea in Hollow Knight: Silksong's first giant expansion, releasing free for all players on December 11, 2026! Watch the full Cherry Time presentation:",
+      "signal": "maybe",
+      "seen": "2026-11-27T15:21:57.261Z"
+    },
+    {
+      "id": "youtube:Fm7T-5VE8jg",
+      "source": "youtube",
+      "title": "The Botanist and the Translator - Reveal Trailer",
+      "url": "https://www.youtube.com/watch?v=Fm7T-5VE8jg",
+      "date": "2026-11-27T15:13:42.000Z",
+      "summary": "Solve a planet-spanning plant mystery as the interstellar botanist Hatti and her trusty translator, Oliver! Investigate a lush, natural world and befriend a cast of crazy creatures in this breezy, beautiful adventure. Currently in developm…",
+      "signal": "maybe",
+      "seen": "2026-11-27T15:21:57.261Z"
+    },
+    {
+      "id": "youtube:X_5kv6wkU7Q",
+      "source": "youtube",
+      "title": "Radio Rain - Reveal Trailer",
+      "url": "https://www.youtube.com/watch?v=X_5kv6wkU7Q",
+      "date": "2026-11-27T15:13:37.000Z",
+      "summary": "Moody lofi beats meet playful platform adventuring in a ruined, rainy world! Search rain-spattered streets, take on an army of mischievous creatures, and work together with your spirit companion to find a way home. Currently in development…",
+      "signal": "maybe",
+      "seen": "2026-11-27T15:21:57.261Z"
+    },
+    {
+      "id": "youtube:p7JgTRSHzjQ",
+      "source": "youtube",
+      "title": "Blokkan: Secret of the Walking City - Reveal Trailer",
+      "url": "https://www.youtube.com/watch?v=p7JgTRSHzjQ",
+      "date": "2026-11-27T15:13:32.000Z",
+      "summary": "Solve a grand mystery atop a gigantic walking city in Blokkan: Secret of the Walking City! Gather clues, meet eccentric characters, and solve playful puzzles in an unforgettable adventure. Currently in development with the proud support of…",
+      "signal": "maybe",
+      "seen": "2026-11-27T15:21:57.261Z"
+    },
+    {
+      "id": "youtube:OlJGAjJf5xU",
+      "source": "youtube",
+      "title": "Team Cherry Presents - Makoto Koji",
+      "url": "https://www.youtube.com/watch?v=OlJGAjJf5xU",
+      "date": "2026-11-27T15:13:19.000Z",
+      "summary": "Meet Makoto Koji, the developer of The Botanist and the Translator! Makoto is an Australian-Japanese indie developer with a passion for bringing cute characters and lush, gorgeous worlds to life. The Botanist and the Translator is a beauti…",
+      "signal": "maybe",
+      "seen": "2026-11-27T15:21:57.261Z"
+    },
+    {
+      "id": "youtube:T30-deLn28M",
+      "source": "youtube",
+      "title": "Team Cherry Presents - Lukas Stobie",
+      "url": "https://www.youtube.com/watch?v=T30-deLn28M",
+      "date": "2026-11-27T15:13:11.000Z",
+      "summary": "Meet Lukas Stobie, the developer of Radio Rain! Lukas is an Australian indie developer of classical, funpacked retro-styled games and a composer of lush, lofi beats. Radio Rain is a playful platform adventure in a moody, rainy-day world! S…",
+      "signal": "maybe",
+      "seen": "2026-11-27T15:21:57.261Z"
+    },
+    {
+      "id": "youtube:IOofDpnaxzg",
+      "source": "youtube",
+      "title": "Team Cherry Presents - Rohan Fraser",
+      "url": "https://www.youtube.com/watch?v=IOofDpnaxzg",
+      "date": "2026-11-27T15:13:06.000Z",
+      "summary": "Meet Rohan Fraser, the developer of Blokkan: Secret of the Walking City! Rohan is an indie developer from South Australia with a love of classic adventure games and a passion for vibrant, handcrafted comic book art. Blokkan: Secret of the…",
+      "signal": "maybe",
+      "seen": "2026-11-27T15:21:57.261Z"
+    },
+    {
       "id": "blog:https://www.teamcherry.com.au/blog/cherrytimeannounce",
       "source": "blog",
       "title": "Join us in 48 hours for Cherry Time!",
